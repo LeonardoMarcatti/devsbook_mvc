@@ -25,7 +25,7 @@ class Model {
                     return $statement->fetchAll(\PDO::FETCH_ASSOC);
                 }
             });
-        }
+        };
         
         self::$_h = self::$_h->table( self::getTableName() );
     }
