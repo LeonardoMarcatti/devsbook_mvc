@@ -2,7 +2,7 @@
 namespace src\controllers;
 
 use \core\Controller;
-use \src\handlers\LoginHandler;
+use \src\handlers\UserHandler;
 
 class LoginController extends Controller {
 
@@ -29,7 +29,7 @@ class LoginController extends Controller {
         $passwd = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 
         if ($email && $passwd) {
-           $token = LoginHandler::verifyLogin($email, $passwd);
+           $token = UserHandler::verifyLogin($email, $passwd);
 
            if ($token) {
                $_SESSION['token'] = $token;
@@ -53,8 +53,8 @@ class LoginController extends Controller {
         $passwd = filter_input(INPUT_POST, 'passwd1', FILTER_SANITIZE_STRING);
 
         if ($name && $email && $birthday && $passwd) {
-            if (LoginHandler::emailExists($email) == false) {
-               $token =  LoginHandler::addUser($name, $email, $birthday, $passwd);
+            if (UserHandler::emailExists($email) == false) {
+               $token =  UserHandler::addUser($name, $email, $birthday, $passwd);
                $_SESSION['token'] = $token;
                $this->redirect('/');
             } else{
@@ -64,9 +64,11 @@ class LoginController extends Controller {
         } else {
             $this->redirect('/logup');
         };
-        
-        
-        
+    }
+
+    public function logout(){
+        $_SESSION['token'] = '';
+        $this->redirect('/');
     }
 
 }

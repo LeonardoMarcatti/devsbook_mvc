@@ -2,7 +2,7 @@
     namespace src\models;
     use \core\Model;
 
-    class Email extends Model {
+    class Relation extends Model {
 
-    };
+    }
 ?>

@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title>DEVSBOOK</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="<?=$base?>/assets/css/style.css" />
 </head>
 <body>
     <header>
