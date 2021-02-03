@@ -4,6 +4,9 @@
             <div class="modal-content"></div>
         </div>
     </div>
+    <script>
+        const BASE = "<?=$base?>";
+    </script>
         <script type="text/javascript" src="<?=$base?>/assets/js/script.js"></script>
         <script type="text/javascript" src="<?=$base?>/assets/js/vanillaModal.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
@@ -15,14 +18,17 @@
             let pass1 = document.querySelector('#pass1');
             let pass2 = document.querySelector('#pass2');
             let message = document.querySelector('#message');
-            submit.addEventListener('click', e =>{
-                if (pass1.value != pass2.value) {
-                    e.preventDefault();
-                    alert('As senhas precisam ser iguais!');
-                    pass1.value = '';
-                    pass2.value = '';
-                };
-            });            
+            if (submit) {
+                submit.addEventListener('click', e =>{
+                    if (pass1.value != pass2.value) {
+                        e.preventDefault();
+                        alert('As senhas precisam ser iguais!');
+                        pass1.value = '';
+                        pass2.value = '';
+                    };
+                }); 
+            };
+                       
         </script>
     </body>
 </html>

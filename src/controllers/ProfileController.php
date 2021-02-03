@@ -117,7 +117,7 @@
             $passwd = filter_input(INPUT_POST, 'pass1', FILTER_SANITIZE_STRING);
 
             //Avatar
-
+            
             #Verifica se foi enviado algo
             if (isset($_FILES['avatar']) && !empty($_FILES['avatar']['tmp_name'])) {
                 $newAvatar = $_FILES['avatar'];
@@ -144,7 +144,7 @@
            
         }
 
-        private function cutImage($file, $w, $h, $folder){
+        public function cutImage($file, $w, $h, $folder){
             list($widthOrginal, $heightOrginal) = getimagesize($file['tmp_name']);
 
             #Os cálculos a seguir fazem com que a altura e largura estejam de acordo com o desejado (200x200 ou 850x310)
