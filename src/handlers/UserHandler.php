@@ -54,7 +54,6 @@ class UserHandler{
 
     public static function verifyLogin($email, $passwd){
         $id_user = Email::select(['id_user'])->where('address', $email)->one();
-
         if ($id_user) {
             $user = User::select()->where('id', $id_user)->one();
         }else{
@@ -68,7 +67,6 @@ class UserHandler{
                 return $token;
             };
         };
-
         return false;
     }
 

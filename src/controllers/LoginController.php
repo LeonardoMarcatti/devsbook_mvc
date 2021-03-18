@@ -38,12 +38,10 @@ class LoginController extends Controller {
                 $_SESSION['flash'] = 'Email e/ou senha não conferem';
                 $this->redirect('/login');
            };
-
         } else {
             $_SESSION['flash'] = 'Digite email e senha.';
             $this->redirect('/login');
         };
-        
     }
 
     public function logupAction(){
