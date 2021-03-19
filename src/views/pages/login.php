@@ -16,7 +16,7 @@
     </header>
     <section class="container main">
         <form method="POST" action="<?=$base?>/login">
-        
+
         <?php 
             if ($flash) { ?>
                <div class="flash"><?=$flash?></div> 
