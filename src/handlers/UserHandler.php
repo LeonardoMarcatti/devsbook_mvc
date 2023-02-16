@@ -88,8 +88,6 @@ class UserHandler{
         return $data;       
     }
 
-
-
     public static function emailExists($email){
         $data = Email::select()->where('address', $email)->one();
         return ($data)? $data : false;
