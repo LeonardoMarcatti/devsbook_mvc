@@ -163,7 +163,7 @@
             $x = ($x < 0)? $x/2 : $x;
             $y = ($y < 0)? $y/2 : $y;
 
-            $finalImage = imagecreatetruecolor($w, $h);
+            $finalImage = \imagecreatetruecolor($w, $h);
 
             switch ($file['type']) {
                 case 'image/jpeg':

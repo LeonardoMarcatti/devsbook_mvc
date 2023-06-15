@@ -1,15 +1,17 @@
-<div class="profile-info m-20 row">
-    <div class="profile-info-avatar">
-        <a href="<?=$base?>/profile/<?=$user->id?>">
-            <img src="<?=$base?>/media/avatars/<?=$user->avatar?>" />
-        </a>
-    </div>
-    <div class="profile-info-name">
-        <div class="profile-info-name-text">
+<div class="profile-info row">
+    <div>
+        <div class="profile-info-avatar">
             <a href="<?=$base?>/profile/<?=$user->id?>">
-                <?=$user->name?></div>
+                <img src="<?=$base?>/media/avatars/<?=$user->avatar?>" />
             </a>
-        <div class="profile-info-location"><?=$user->city?></div>
+        </div>
+        <div class="profile-info-name">
+            <div class="profile-info-name-text">
+                <a href="<?=$base?>/profile/<?=$user->id?>">
+                    <?=$user->name?></div>
+                </a>
+            <div class="profile-info-location"><?=$user->city?></div>
+        </div>
     </div>
     <div class="profile-info-data row">
         <?php

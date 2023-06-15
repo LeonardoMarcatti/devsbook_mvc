@@ -170,6 +170,7 @@ header .head-side {
     border:1px solid #c9cacc;
     border-radius:5px;
     margin-bottom:10px;
+    width: 100%;
 }
 .box .box-header {
     padding:10px;
@@ -226,8 +227,16 @@ header .head-side {
 }
 .feed-new-input-placeholder {
     flex:1;
-    font-size:14px;
+    font-size: 14px;
     color:#333;
+}
+
+.editionBlock {
+    display: flex;
+    flex-flow: row nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
 }
 .feed-new-input {
     flex:1;
@@ -239,7 +248,8 @@ header .head-side {
 }
 .feed-new-send, .feed-new-photo {
     cursor: pointer;
-    margin-right:5px;
+    margin-right: 5px;
+    margin-left: 5px;
 }
 .feed-new-send img, .feed-new-photo img {
     width:25px;
@@ -247,7 +257,7 @@ header .head-side {
 }
 
 .banners .box-body {
-    margin:0 10px 10px 10px;
+    margin: 0 10px 10px 10px;
 }
 .banners .box-body a {
     display: block;
@@ -261,10 +271,38 @@ header .head-side {
 }
 
 .profile-info {
+    padding: 0;
+    display: flex;
+    flex-flow: row nowrap;
     align-items: center;
+    justify-content: space-between;
+    width: auto;
+    margin: 20px 0 20px 0;
 }
+
+.profile-info > div {
+    width: 50%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.profile-info-name {
+    margin-top:10px;
+}
+
+.profile-info-data {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    width: auto;
+}
+
 .profile-info-avatar {
-    margin-right:15px;
+    width: auto;
+    margin-right: 15px;
 }
 .profile-info-avatar img {
     width:50px;
@@ -272,7 +310,8 @@ header .head-side {
     border-radius:50%;
 }
 .profile-info-name {
-    flex:1;
+    width: auto;
+    margin: 0;
 }
 .profile-info-name-text {
     font-size:20px;
@@ -295,6 +334,7 @@ header .head-side {
 
 .profile-info-item {
     text-align: center;
+    width: auto;
 }
 .profile-info-item-n {
     font-weight: bold;
@@ -503,18 +543,6 @@ header .head-side {
 
     .profile-cover {
         height:150px;
-    }
-
-    .profile-info {
-        flex-direction: column;
-    }
-
-    .profile-info-name {
-        margin-top:10px;
-    }
-
-    .profile-info-data {
-        margin-top:30px;
     }
 
     .full-friend-list {

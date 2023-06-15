@@ -18,7 +18,7 @@
         }
 
         public function index($attrs = []) {
-            $search_term = filter_input(INPUT_GET, 's', FILTER_SANITIZE_STRING);
+            $search_term = filter_input(INPUT_GET, 's', \FILTER_SANITIZE_SPECIAL_CHARS);
 
             if (empty($search_term)) {
                 $this->redirect('/');
@@ -40,8 +40,7 @@
                 $this->render('search', ['loggedUser' => $this->loggedUser, 'users' => $users]);
             };
 
-            $this->redirect('/');
-            
+            $this->redirect('/');            
         }
 
         

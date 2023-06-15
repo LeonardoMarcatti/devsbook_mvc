@@ -1,7 +1,7 @@
 <?=$render('header', ['loggedUser' => $loggedUser]);?>
 <section class="container main">
         <?=$render('side_panel', ['active_menu' => 'home']);?>
-    <section class="feed mt-10">
+    <section class="feed mt-5">
             
     <div class="row">
         <div class="column pr-5">

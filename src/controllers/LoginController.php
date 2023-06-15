@@ -26,7 +26,7 @@ class LoginController extends Controller {
 
     public function loginAction(){
         $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-        $passwd = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+        $passwd = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_SPECIAL_CHARS);
 
         if ($email && $passwd) {
            $token = UserHandler::verifyLogin($email, $passwd);
@@ -45,10 +45,10 @@ class LoginController extends Controller {
     }
 
     public function logupAction(){
-        $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+        $name = filter_input(INPUT_POST, 'name', \FILTER_SANITIZE_SPECIAL_CHARS);
         $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-        $birthday = filter_input(INPUT_POST, 'birthday', FILTER_SANITIZE_STRING);
-        $passwd = filter_input(INPUT_POST, 'passwd1', FILTER_SANITIZE_STRING);
+        $birthday = filter_input(INPUT_POST, 'birthday', FILTER_SANITIZE_SPECIAL_CHARS);
+        $passwd = filter_input(INPUT_POST, 'passwd1', FILTER_SANITIZE_SPECIAL_CHARS);
 
         if ($name && $email && $birthday && $passwd) {
             if (UserHandler::emailExists($email) == false) {

@@ -278,8 +278,5 @@ class UserHandler{
             ->set('address', $email)
             ->where('id_user', $id)
             ->execute();
-
     }
-
-
 };

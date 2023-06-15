@@ -1,6 +1,6 @@
 <div class="box feed-item" data-id="<?=$data->id;?>">
     <div class="box-body">
-        <div class="feed-item-head row mt-20 m-width-20">
+        <div class="feed-item-head mt-20 m-width-20">
             <div class="feed-item-head-photo">
                 <a href="<?=$base?>/profile/<?=$data->user->id?>"><img src="<?=$base?>/media/avatars/<?=$data->user->avatar?>" /></a>
             </div>
@@ -12,11 +12,8 @@
                         case 'text':
                             echo 'fez um post';
                             break;
-                        case 'photo':
+                        default :
                             echo 'postou uma foto';
-                            break;                        
-                        default:
-                            # code...
                             break;
                     };
                 ?>
